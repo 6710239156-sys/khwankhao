@@ -1,0 +1,165 @@
+/* ===============================
+   หน้า ผลงาน (Portfolio Page)
+   =============================== */
+/* หัวข้อบนสุดของหน้าผลงาน */
+.page-title {
+    display: inline-block;
+    padding: 18px 45px;
+    margin: 40px auto 60px;
+    background: linear-gradient(135deg, #78bffa, #ff92d2);
+    border-radius: 35px;
+    font-size: 4vh;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* ===== ผลงานเดี่ยว (การแข่งขัน) ===== */
+.portfolio-single {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.portfolio-single img {
+    width: 65%;
+    max-width: 700px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.portfolio-single h2 {
+    margin-bottom: 10px;
+}
+
+.portfolio-single p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+
+/* ===== หัวข้อหมวดผลงาน ===== */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* ===== Slider ===== */
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 80px;
+}
+
+.slide-content {
+    text-align: center;
+}
+
+.slide-content img {
+    width: 60%;
+    max-width: 600px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.slide-content img:hover {
+    transform: scale(1.02);
+}
+
+.slide-content p {
+    margin-top: 15px;
+    font-size: 2vh;
+    line-height: 1.6;
+}
+
+
+/* ===== ปุ่มสไลด์ (ไอคอน) ===== */
+.slide-btn {
+    border: none;
+    background: #ffffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 3vh;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.slide-btn:hover {
+    background: #e6f6ff;
+    transform: scale(1.15);
+}
+
+.slide-btn:active {
+    transform: scale(0.95);
+}
+
+/* ===== การผลิตสื่อ (ภาพปก + ลิงก์) ===== */
+.video-section {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+.video-link {
+    width: 45%;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+/* ปรับขนาดภาพปกให้เท่ากัน */
+.video-link img {
+    width: 100%;
+    height: 220px;          /* กำหนดความสูงเท่ากัน */
+    object-fit: cover;      /* ครอบรูปให้พอดีกรอบ */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+
+.section-title {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 60px auto 40px;
+    background: linear-gradient(135deg, #81d1ff, #74b0ff);
+    border-radius: 30px;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   🎨 PORTFOLIO – MAGIC GALLERY
+================================ */
+
+.page-title {
+    box-shadow:
+        0 0 40px rgba(255,160,220,0.45);
+}
+
+.portfolio-single img,
+.slide-content img,
+.video-link img {
+    box-shadow:
+        0 0 35px rgba(120,200,255,0.35);
+}
+
+.slide-btn {
+    box-shadow:
+        0 0 20px rgba(180,140,255,0.45);
+}
+
+.slide-btn:hover {
+    transform: scale(1.1);
+}

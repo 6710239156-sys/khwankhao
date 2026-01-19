@@ -1,0 +1,380 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+      background: linear-gradient(
+        to bottom,
+        #c1e1ff,   /* ฟ้าอ่อนพาสเทล */
+        #9bcfff    /* ชมพูอ่อนพาสเทล */
+    );
+
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* navbar */
+.navber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(197, 232, 255);
+    width: 100%;
+    height: 5vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navber a {
+    text-decoration: none;
+    margin-right: 2vh;
+    color: black;
+    font-size: 2vh;
+}
+
+/* ให้เนื้อหาไม่โดนเมนูบัง */
+.page-content {
+    margin-top: 8vh;   /* ปรับตามความสูง navbar */
+}
+
+/* Layout ของ container */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Service cards */
+.services {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.service-item {
+    flex: 1 1 300px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* Contact page style */
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #e6f6ff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-size: 3vh;
+    margin-bottom: 10px;
+    color: #0088cc;
+}
+
+.subtitle {
+    margin-bottom: 25px;
+    color: #444;
+    font-size: 2vh;
+}
+
+.contact-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.contact-box h2 {
+    font-size: 2.2vh;
+    color: #00aaff;
+    margin-bottom: 5px;
+}
+
+.contact-box a {
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 2vh;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+/* LINE icon */
+.line-icon {
+    width: 70px;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+.line-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Profile Section (หน้าแรก) */
+.profile-section {
+    margin-top: 10vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* กรอบรูปแบบ Soft Card (มุมโค้งมาก) */
+.profile-image-frame {
+    width: 300px;              /* ขยายรูปให้ใหญ่ขึ้นนิดหน่อย */
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 40px;       /* มุมโค้งเยอะ */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* รูปด้านใน */
+.profile-image-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;       /* โค้งตามกรอบ */
+    display: block;
+}
+
+
+/* กล่องข้อความ */
+.profile-text-box {
+    max-width: 600px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.profile-title {
+    font-size: 3vh;
+    color: #0088cc;
+    margin-bottom: 15px;
+}
+
+.profile-description {
+    font-size: 2vh;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* เฟดเข้า + เด้งนุ่ม ๆ */
+@keyframes fadeBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.08) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.fade-bounce {
+    animation: fadeBounce 3s ease-out forwards;
+}
+
+
+/* ลอยขึ้นลงเบา ๆ */
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.floating {
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* รวมหลายอนิเมชันพร้อมกันแบบไม่ทับค่า transform */
+.fade-bounce-floating {
+    animation: fadeBounce 1s ease-out forwards, floating 4s ease-in-out 1s infinite;
+}
+
+/* ฟองสบู่พื้นหลัง */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ตัวฟอง */
+.bubbles span {
+    position: absolute;
+    bottom: -100px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: bubbleUp 12s linear infinite;
+}
+
+@keyframes bubbleUp {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) scale(1.1);
+        opacity: 0;
+    }
+}
+
+
+/* ทำให้ฟองกระจาย */
+.bubbles span:nth-child(1) { left: 10%; animation-duration: 10s; }
+.bubbles span:nth-child(2) { right: 30%; animation-duration: 14s; }
+.bubbles span:nth-child(3) { left: 50%; animation-duration: 12s; }
+.bubbles span:nth-child(4) { right: 70%; animation-duration: 16s; }
+.bubbles span:nth-child(5) { left: 90%; animation-duration: 18s; }
+body {
+    background: linear-gradient(135deg, #ffd6e8, #dff5ff);
+}
+.bubbles span {
+    background: rgb(255, 255, 255);
+}
+
+/* ===============================
+   🌙 FANTASY CORE – ทั้งเว็บ
+================================ */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(170,120,255,0.25), transparent 45%),
+        radial-gradient(circle at 85% 30%, rgba(120,200,255,0.25), transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(255,170,220,0.2), transparent 55%);
+    z-index: -3;
+    animation: fantasyMist 22s ease-in-out infinite alternate;
+}
+
+@keyframes fantasyMist {
+    from { opacity: 0.6; }
+    to   { opacity: 1; }
+}
+
+/* กล่องทุกกล่องมีฟีลเวทมนตร์ */
+.profile-text-box,
+.bio-section,
+.portfolio-single,
+.contact-box,
+.contact-address,
+.home-section,
+.home-cta {
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+
+/* เส้นแสงไหลบาง ๆ */
+.profile-text-box::after,
+.bio-section::after,
+.home-cta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    animation: shimmer 8s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-120%); }
+    50% { transform: translateX(120%); }
+    100% { transform: translateX(120%); }
+}
+
+/* ===============================
+   🌟 MAIN CHARACTER EFFECT
+================================ */
+
+.profile-image-center {
+    position: relative;
+    z-index: 5;
+}
+
+.profile-image-frame {
+    animation: heroReveal 1.6s ease forwards;
+}
+
+@keyframes heroReveal {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* ===============================
+   🌫️ DEPTH SYSTEM
+================================ */
+
+.page-content,
+.profile-section,
+.bio-container {
+    position: relative;
+    z-index: 2;
+}
+
+body {
+    background-attachment: fixed;
+}
+
+body::before {
+    filter: blur(40px) saturate(140%);
+}
+
+/* ===============================
+   PAGE TRANSITION – FADE
+================================ */
+
+body {
+    transition: opacity 0.6s ease;
+}
+
+body.page-exit {
+    opacity: 0;
+}

@@ -1,0 +1,68 @@
+/* ===============================
+   กล่องที่อยู่
+   =============================== */
+.contact-address {
+    max-width: 900px;
+    margin: 60px auto 100px;
+    padding: 28px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 32px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* ฝั่งซ้าย */
+.address-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.address-icon {
+    font-size: 30px;
+}
+
+.address-text h3 {
+    margin-bottom: 6px;
+}
+
+.address-text p {
+    line-height: 1.6;
+    font-size: 1.9vh;
+}
+
+/* ปุ่ม Google Map */
+.map-btn {
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #9bcfff;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.map-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: #c1e1ff;
+}
+
+/* ===============================
+   💌 CONTACT – MAGIC WARM
+================================ */
+
+.contact-container,
+.contact-address {
+    box-shadow:
+        0 0 40px rgba(120,200,255,0.35),
+        0 0 70px rgba(255,200,255,0.25);
+}
+
+.map-btn {
+    box-shadow:
+        0 0 25px rgba(120,200,255,0.4);
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงาน</title>
+
+    <!-- CSS หลัก -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS เฉพาะหน้า ผลงาน -->
+    <link rel="stylesheet" href="ผลงาน.css">
+</head>
+<body>
+
+    <!-- เมนูนำทาง -->
+       <div class="navber">
+        <a href="index.html">index</a>
+        <a href="Personal.html">Personal</a>
+        <a href="Portfolio.html">Portfolio</a>
+        <a href="Contact.html">Contact</a>
+    </div>
+
+
+    <!-- เนื้อหาหลัก -->
+    <div class="page-content">
+
+       <h1 class="page-title">ผลงานของฉัน</h1>
+       
+        <!-- ===============================
+             ผลงานชิ้นที่ 1 : การแข่งขัน (เดี่ยว)
+             =============================== -->
+        <div class="portfolio-single">
+            <img src="img/รางวัล.jpg" alt="ผลงานการแข่งขัน">
+
+            <h2>Botok cup 2025</h2>
+            <p>
+                ผลงานนี้เป็นผลงานที่ใช้ในการแข่งขัน Botok cup
+                โดยได้รางวัลอันดับที่ 3
+            </p>
+        </div>
+
+        <!-- ===============================
+             ผลงานด้านการออกแบบ (สไลด์)
+             =============================== -->
+        <h2 class="section-title">ผลงานด้านการออกแบบ</h2>
+
+        <div class="slider">
+
+            <!-- ปุ่มเลื่อนซ้าย -->
+            <button class="slide-btn left" onclick="prevSlide()">
+                &#10094;
+            </button>
+
+            <!-- เนื้อหาสไลด์ -->
+            <div class="slide-content">
+                <img id="slideImage" src="img/design1.jpg" alt="ผลงานออกแบบ">
+                <p id="slideText"></p>
+            </div>
+
+            <!-- ปุ่มเลื่อนขวา -->
+            <button class="slide-btn right" onclick="nextSlide()">
+                &#10095;
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ===============================
+         JavaScript สำหรับสไลด์
+         =============================== -->
+    <script>
+        const slides = [
+            {
+                img: "img/โทมิ.png",
+                text: "ออกแบบคาแรคเตอร์เพื่อทำสติ๊กเกอร์ไลน์"
+            },
+            {
+                img: "img/โทมิดุ๊กดิ๊ก.png",
+                text: "ออกแบบคาแรคเตอร์เพื่อทำสติ๊กเกอร์ไลน์แบบขยับได้"
+            },
+            {
+                img: "img/โปสเตอร์.png",
+                text: "ออกแบบโปสเตอร์ข้อความโปรเตอร์ตามรูปทรง"
+            },
+            {
+                img: "img/โลโก้ Meowzy.png",
+                text: "ออกแบบโลโก้ร้านคาเฟ่แมว"
+            },
+            {
+                img: "img/ไทยจีน.png",
+                text: "ออกแบบโปสเตอร์ประกวด Botok cup"
+            },
+            {
+                img: "img/ไลฟ์สด.png",
+                text: "ออกแบบโลโก้ไลฟ์สด"
+            }
+        ];
+
+        let currentIndex = 0;
+        const slideImage = document.getElementById("slideImage");
+        const slideText = document.getElementById("slideText");
+
+        function showSlide(index) {
+            slideImage.src = slides[index].img;
+            slideText.textContent = slides[index].text;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        // แสดงสไลด์แรกตอนโหลดหน้า
+        showSlide(currentIndex);
+    </script>
+
+<!-- ===============================
+     ผลงานด้านการผลิตสื่อ
+     (ภาพปก + ลิงก์ไป Google Drive)
+     =============================== -->
+<h2 class="section-title">การผลิตสื่อ</h2>
+
+<div class="video-section">
+
+    <!-- คลิปที่ 1 -->
+    <a href="https://drive.google.com/file/d/1pMyypons3etu9luoYqU0qNUQlAjvVSo4/view?usp=drive_link"
+       target="_blank"
+       class="video-link">
+
+        <img src="img/ปกผี.png" alt="Haunted Awake">
+        <p class="video-title">ละครสั้นสยองขวัญ Haunted Awake</p>
+
+    </a>
+
+    <!-- คลิปที่ 2 -->
+    <a href="https://drive.google.com/file/d/1r9VyGirFBCJWMHfl4BfFP6b3PgagcRjh/view?usp=drive_link"
+       target="_blank"
+       class="video-link">
+
+        <img src="img/421.webp" alt="โฆษณา 4U2">
+        <p class="video-title">โฆษณาลิปสติก 4U2</p>
+
+    </a>
+
+</div>
+
+<script src="transition.js"></script>
+
+</body>
+<div class="bubbles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</html>

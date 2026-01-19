@@ -1,0 +1,317 @@
+/* ===============================
+   RESET เบา ๆ
+================================ */
+* {
+    box-sizing: border-box;
+}
+
+/* ===============================
+   HERO INTRO (ข้อความต้อนรับใหญ่)
+================================ */
+.hero-intro {
+    margin: 60px auto 40px;
+    max-width: 900px;
+    padding: 40px 25px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.hero-intro h1 {
+    font-size: 4.5vh;
+    color: #0088cc;
+    margin-bottom: 15px;
+}
+
+.hero-intro p {
+    font-size: 2.2vh;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ===============================
+   PROFILE IMAGE (รูปกึ่งกลาง)
+================================ */
+.profile-image-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 80px;
+}
+
+/* กรอบรูปหลัก */
+.profile-image-frame {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 45px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    position: relative;
+}
+
+/* ขยายขนาดรูป */
+.big-cute-frame {
+    width: 380px;
+}
+
+/* รูปด้านใน */
+.profile-image-frame img {
+    width: 100%;
+    display: block;
+    border-radius: 35px;
+}
+
+/* ออร่าน่ารักรอบรูป */
+.big-cute-frame::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border-radius: 55px;
+    background: linear-gradient(
+        135deg,
+        #ffd6e8,
+        #dff5ff,
+        #fff1c1
+    );
+    filter: blur(18px);
+    opacity: 0.9;
+    z-index: -1;
+}
+
+/* อีโมจิลอย */
+.big-cute-frame::after {
+    content: "💖 ✨ 💫";
+    position: absolute;
+    top: -18px;
+    right: 20px;
+    font-size: 2.4vh;
+    animation: floatCute 3s ease-in-out infinite;
+}
+
+/* ===============================
+   PROFILE TEXT
+================================ */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.profile-text-box {
+    max-width: 650px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.profile-title {
+    font-size: 3.2vh;
+    color: #ff7aa2;
+    margin-bottom: 15px;
+}
+
+.profile-description {
+    font-size: 2vh;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* ===============================
+   PLAYFUL SECTION
+================================ */
+.home-section.playful {
+    max-width: 1100px;
+    margin: 0 auto 90px;
+    padding: 50px 20px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 40px;
+}
+
+.section-title {
+    font-size: 3.5vh;
+    color: #006fa6;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 2vh;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* การ์ด */
+.interest-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.playful-card {
+    width: 280px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    transition: 0.35s;
+    cursor: pointer;
+}
+
+.playful-card:hover {
+    transform: translateY(-12px) rotate(-1deg);
+}
+
+.playful-card h3 {
+    color: #ff7aa2;
+    margin-bottom: 10px;
+}
+
+.playful-card p {
+    font-size: 1.9vh;
+    line-height: 1.6;
+}
+
+/* ===============================
+   CTA SECTION
+================================ */
+.home-cta {
+    max-width: 900px;
+    margin: 0 auto 120px;
+    padding: 50px 25px;
+    background: linear-gradient(135deg, #dff5ff, #ffd6e8);
+    border-radius: 45px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.home-cta h2 {
+    font-size: 3.5vh;
+    margin-bottom: 10px;
+}
+
+.home-cta p {
+    font-size: 2vh;
+    color: #444;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 34px;
+    background: #0088cc;
+    color: #ffffff;
+    border-radius: 35px;
+    text-decoration: none;
+    font-size: 2vh;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background: #006fa6;
+    transform: translateY(-3px);
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.08) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.fade-bounce-floating {
+    animation: fadeBounce 1s ease-out forwards, floating 4s ease-in-out 1s infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatCute {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===============================
+   🌸 HOME – MAGIC INTRO
+================================ */
+
+.hero-intro {
+    box-shadow:
+        0 0 40px rgba(180,140,255,0.35),
+        0 0 90px rgba(120,200,255,0.25);
+}
+
+.profile-image-frame {
+    box-shadow:
+        0 0 50px rgba(180,140,255,0.4),
+        0 0 100px rgba(120,200,255,0.3);
+}
+
+.big-cute-frame::before {
+    animation: auraPulse 6s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+    0%   { opacity: 0.4; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+.playful-card {
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.95),
+        rgba(240,240,255,0.9)
+    );
+    box-shadow: 0 10px 30px rgba(150,150,255,0.25);
+}
+
+.playful-card:hover {
+    transform: translateY(-6px);
+}
+
+.home-cta {
+    box-shadow:
+        0 0 40px rgba(255,200,255,0.35);
+}
+
+/* ===============================
+   🌟 MAIN CHARACTER EFFECT
+================================ */
+
+.profile-image-center {
+    position: relative;
+    z-index: 5;
+}
+
+.profile-image-frame {
+    animation: heroReveal 1.6s ease forwards;
+}
+
+@keyframes heroReveal {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
